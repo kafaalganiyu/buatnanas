@@ -10,6 +10,12 @@ interface ConfirmationSequenceProps {
   onCancel: () => void;
 }
 
+const STEP_IMAGES = [
+  '/gambar/areyousure.jpg',
+  '/gambar/likereallysure.jpg',
+  '/gambar/okaybutyouare.jpg',
+];
+
 export default function ConfirmationSequence({
   onComplete,
   onCancel,
@@ -18,6 +24,7 @@ export default function ConfirmationSequence({
   const [playfulNote, setPlayfulNote] = useState<string | null>(null);
 
   const currentStep = CONFIRMATION_STEPS[currentStepIndex];
+  const currentImage = STEP_IMAGES[currentStepIndex];
 
   const handleYes = () => {
     setPlayfulNote(null);
@@ -49,7 +56,7 @@ export default function ConfirmationSequence({
           className="w-full relative glass-card-glow rounded-3xl p-7 sm:p-10 text-center shadow-2xl border-sky-300/50"
         >
           {/* Step Indicator */}
-          <div className="flex items-center justify-center gap-1.5 mb-6">
+          <div className="flex items-center justify-center gap-1.5 mb-5">
             {CONFIRMATION_STEPS.map((s, idx) => (
               <div
                 key={s.step}
@@ -64,22 +71,26 @@ export default function ConfirmationSequence({
             ))}
           </div>
 
-          {/* Floating Emoji / Icon */}
+          {/* Reaction Image */}
           <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 5, -5, 0],
-            }}
-            transition={{ duration: 2.5, repeat: Infinity }}
-            className="w-16 h-16 mx-auto mb-6 rounded-full bg-sky-400/15 border border-sky-300/30 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(56,189,248,0.3)]"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-5 rounded-2xl overflow-hidden shadow-xl border-2 border-sky-300/60 bg-slate-900 flex items-center justify-center"
           >
-            {currentStepIndex === 0 && '🥺'}
-            {currentStepIndex === 1 && '👀'}
-            {currentStepIndex === 2 && '💙'}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={currentImage}
+              alt="Reaction"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
           </motion.div>
 
           {/* Confirmation Question */}
-          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-white text-glow-soft mb-8 leading-snug">
+          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-white text-glow-soft mb-6 leading-snug">
             {currentStep.question}
           </h3>
 
@@ -88,7 +99,7 @@ export default function ConfirmationSequence({
             <motion.div
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-6 px-3.5 py-1.5 rounded-full bg-sky-400/20 border border-sky-300/40 text-sky-100 text-xs sm:text-sm font-medium shadow"
+              className="mb-5 px-3.5 py-1.5 rounded-full bg-sky-400/20 border border-sky-300/40 text-sky-100 text-xs sm:text-sm font-medium shadow"
             >
               {playfulNote}
             </motion.div>
