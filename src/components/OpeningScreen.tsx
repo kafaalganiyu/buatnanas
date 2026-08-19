@@ -32,8 +32,10 @@ export default function OpeningScreen({ onStart, isPlaying, onTogglePlay }: Open
           Hey Nasss, I made something <br />
           <span className="italic text-sky-300 shimmer-text">for you.</span>
         </h1>
-        <p className="text-xs sm:text-sm text-sky-200/80 max-w-md mx-auto font-light">
-          A little digital letter with our song playing in the background ♫
+        
+        {/* Indonesian begadang note */}
+        <p className="text-xs sm:text-sm text-sky-200/90 max-w-md mx-auto font-normal bg-sky-500/15 py-1.5 px-4 rounded-full border border-sky-400/25 inline-block shadow-sm">
+          maaf yaa semalem begadang, akuu bikin ini :))) 💙
         </p>
       </motion.div>
 
