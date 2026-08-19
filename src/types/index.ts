@@ -11,6 +11,9 @@ export interface ConfessionPart {
   emphasis?: boolean;
   buttonText?: string;
   subtext?: string;
+  image?: string;
+  imageCaption?: string;
+  images?: string[];
 }
 
 export interface ConfirmationStep {

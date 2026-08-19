@@ -24,21 +24,29 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
   {
     id: 5,
     content: "You probably didn’t know this, but during those two years when we weren’t in contact, I talked about you to my friends so often.",
+    image: "/gambar/WhatsApp Image 2026-08-20 at 01.28.31.jpeg",
+    imageCaption: "Selalu ceritain tentang kamu...",
     buttonText: "Read more ♡",
   },
   {
     id: 6,
     content: "I was truly thinking about you all this time, wondering how your days were going.",
+    image: "/gambar/WhatsApp Image 2026-08-20 at 01.28.50.jpeg",
+    imageCaption: "Bener-bener selalu kepikiran kamu...",
     buttonText: "Continue ♡",
   },
   {
     id: 7,
     content: "I still checked your playlists, and I still made secret playlists just for you.",
+    image: "/gambar/Screenshot 2026-08-20 012149.png",
+    imageCaption: "Playlist yang selalu buat kamu ♫",
     buttonText: "Next ♡",
   },
   {
     id: 8,
     content: "I was genuinely happy whenever you updated something on your second account, and I tweeted so much about you without you even knowing.",
+    image: "/gambar/Screenshot 2026-08-20 012331.png",
+    imageCaption: "Every little thought was about you...",
     buttonText: "Continue ♡",
   },
   {
@@ -46,6 +54,8 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
     content: "I think I fell way too deep.",
     emphasis: true,
     subtext: "— and every thought kept leading back to you.",
+    image: "/gambar/f7d10e36-d523-4e46-a3c5-50ccbcc8bd76.jpg",
+    imageCaption: "Falling for you 💙",
     buttonText: "Keep reading ♡",
   },
   {
@@ -111,6 +121,11 @@ export const CONFIRMATION_STEPS: ConfirmationStep[] = [
 export const CELEBRATION_DATA = {
   title: "Then it’s official. 💙",
   subtitle: "I’m your girlfriend now.",
-  loveNote: "From high school memories, quiet playlists, and all the times I talked about you to my friends — thank you for being you. I promise not to let you go this time.",
+  loveNote: "From high school memories, quiet playlists, and all the times I talked about you to my friends — thank you for letting me back into your life. I promise to cherish you always.",
   signature: "With all my love ♡",
+  galleryImages: [
+    "/gambar/f7d10e36-d523-4e46-a3c5-50ccbcc8bd76.jpg",
+    "/gambar/Screenshot 2026-08-20 012149.png",
+    "/gambar/WhatsApp Image 2026-08-20 at 01.28.31.jpeg",
+  ],
 };

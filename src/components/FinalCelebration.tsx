@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { CELEBRATION_DATA } from '@/data/confessionData';
-import { Heart, Sparkles, Music2, RotateCcw, Calendar, Disc3 } from 'lucide-react';
+import { Heart, Sparkles, Calendar, Disc3, RotateCcw } from 'lucide-react';
 
 interface FinalCelebrationProps {
   onRestart: () => void;
@@ -62,9 +62,9 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
       initial={{ opacity: 0, scale: 0.92 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-xl mx-auto px-4 sm:px-6 py-8 flex flex-col items-center justify-center min-h-[85vh] z-10 text-center"
+      className="w-full max-w-xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col items-center justify-center min-h-[85vh] z-10 text-center"
     >
-      <div className="w-full relative glass-card-glow rounded-3xl p-7 sm:p-11 overflow-hidden shadow-2xl border-sky-400/40">
+      <div className="w-full relative glass-card-glow rounded-3xl p-6 sm:p-10 overflow-hidden shadow-2xl border-sky-400/40">
         {/* Glow backdrop aura */}
         <div className="absolute -top-24 -left-24 w-60 h-60 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-60 h-60 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
@@ -76,9 +76,9 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
             rotate: [0, 5, -5, 0],
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-tr from-sky-500/20 to-blue-500/30 border border-sky-300/40 flex items-center justify-center text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+          className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-5 rounded-full bg-gradient-to-tr from-sky-500/20 to-blue-500/30 border border-sky-300/40 flex items-center justify-center text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.4)]"
         >
-          <Heart className="w-10 h-10 fill-sky-400 text-sky-300" />
+          <Heart className="w-8 h-8 sm:w-10 sm:h-10 fill-sky-400 text-sky-300" />
         </motion.div>
 
         {/* Big Official Title */}
@@ -106,11 +106,30 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="p-6 sm:p-7 rounded-2xl bg-midnight-900/70 border border-sky-400/25 text-left my-6 relative shadow-inner"
+          className="p-5 sm:p-7 rounded-2xl bg-midnight-900/75 border border-sky-400/25 text-left my-5 relative shadow-inner"
         >
           <p className="text-sm sm:text-base text-sky-100/90 font-light leading-relaxed mb-4">
             {CELEBRATION_DATA.loveNote}
           </p>
+
+          {/* Photo Gallery Grid */}
+          {CELEBRATION_DATA.galleryImages && (
+            <div className="my-4 grid grid-cols-3 gap-2">
+              {CELEBRATION_DATA.galleryImages.map((src, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-lg overflow-hidden border border-sky-300/30 bg-slate-900/80 shadow-md h-24 sm:h-28 flex items-center justify-center p-1"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt="Memory photo"
+                    className="w-full h-full object-contain rounded hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="flex items-center justify-between pt-3 border-t border-sky-400/20 text-xs text-sky-300/80">
             <span className="flex items-center gap-1.5">
@@ -128,7 +147,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-2 text-xs text-sky-300/90 mb-8"
+          className="flex items-center justify-center gap-2 text-xs text-sky-300/90 mb-6"
         >
           <Disc3 className="w-4 h-4 text-sky-400 animate-spin" />
           <span>Playing <strong className="text-white font-medium">blue — yung kai</strong> ♫</span>
