@@ -24,29 +24,27 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
   {
     id: 5,
     content: "You probably didn’t know this, but during those two years when we weren’t in contact, I talked about you to my friends so often.",
-    image: "/gambar/twit2.jpeg",
-    imageCaption: "Cerita tentang kamu ke temen-temenku...",
     buttonText: "Read more ♡",
   },
   {
     id: 6,
     content: "I was truly thinking about you all this time, Nasss... wondering how your days were going.",
     image: "/gambar/imissyou.png",
-    imageCaption: "I really was thinking about you all this time...",
     buttonText: "Continue ♡",
   },
   {
     id: 7,
     content: "I still checked your playlists, and I still made secret playlists just for you.",
     image: "/gambar/playlist.png",
-    imageCaption: "Playlist rahasia yang selalu ada nama kamu ♫",
     buttonText: "Next ♡",
   },
   {
     id: 8,
     content: "I was genuinely happy whenever you updated something on your second account, and I tweeted so much about you without you even knowing.",
-    image: "/gambar/twit1.jpeg",
-    imageCaption: "Tweet-tweet kecil yang sebenernya selalu tentang kamu...",
+    images: [
+      "/gambar/twit1.jpeg",
+      "/gambar/twit2.jpeg"
+    ],
     buttonText: "Continue ♡",
   },
   {
@@ -55,7 +53,6 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
     emphasis: true,
     subtext: "— and every path kept leading straight back to you.",
     image: "/gambar/f7d10e36-d523-4e46-a3c5-50ccbcc8bd76.jpg",
-    imageCaption: "Falling for you 💙",
     buttonText: "Keep reading ♡",
   },
   {

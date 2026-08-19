@@ -21,7 +21,8 @@ export default function ConfessionStory({
   onPrev,
 }: ConfessionStoryProps) {
   const isEmphasis = currentPart.emphasis;
-  const hasImage = !!currentPart.image;
+  const hasSingleImage = !!currentPart.image;
+  const hasMultipleImages = !!(currentPart.images && currentPart.images.length > 0);
   const isLyricsPart = currentPart.id === 10;
 
   return (
@@ -130,13 +131,13 @@ export default function ConfessionStory({
               </motion.p>
             )}
 
-            {/* Prominent Memory Photo Polaroid for sections where he thinks of her */}
-            {hasImage && currentPart.image && (
+            {/* Single Photo Polaroid (No Caption) */}
+            {hasSingleImage && currentPart.image && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-5 p-3 sm:p-3.5 bg-white/95 rounded-2xl shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 max-w-[280px] sm:max-w-[340px] mx-auto text-slate-800 border-2 border-sky-200/70"
+                className="mt-5 p-2.5 sm:p-3 bg-white/95 rounded-2xl shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 max-w-[280px] sm:max-w-[340px] mx-auto text-slate-800 border-2 border-sky-200/70"
               >
                 <div className="w-full max-h-60 sm:max-h-72 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -146,11 +147,34 @@ export default function ConfessionStory({
                     className="w-full h-auto max-h-60 sm:max-h-72 object-contain rounded-xl hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                {currentPart.imageCaption && (
-                  <p className="mt-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 italic text-center px-1">
-                    {currentPart.imageCaption}
-                  </p>
-                )}
+              </motion.div>
+            )}
+
+            {/* Multiple Photos Grid / Side-by-Side (Part 8: twit1 & twit2, No Caption) */}
+            {hasMultipleImages && currentPart.images && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[320px] sm:max-w-[460px] mx-auto"
+              >
+                {currentPart.images.map((imgSrc, idx) => (
+                  <div
+                    key={idx}
+                    className={`p-2.5 bg-white/95 rounded-2xl shadow-2xl transition-transform duration-300 border-2 border-sky-200/70 ${
+                      idx === 0 ? 'sm:-rotate-1 hover:rotate-0' : 'sm:rotate-1 hover:rotate-0'
+                    }`}
+                  >
+                    <div className="w-full h-44 sm:h-52 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center relative">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={imgSrc}
+                        alt={`Tweet memory ${idx + 1}`}
+                        className="w-full h-full object-contain rounded-xl hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                ))}
               </motion.div>
             )}
           </div>
