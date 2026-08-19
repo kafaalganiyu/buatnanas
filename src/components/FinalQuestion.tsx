@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FINAL_QUESTION_DATA, REJECTION_RESPONSES } from '@/data/confessionData';
-import { Heart, Sparkles, AlertCircle } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 interface FinalQuestionProps {
   onAccept: () => void;
@@ -17,8 +17,6 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
     const nextCount = noCount + 1;
     setNoCount(nextCount);
 
-    // Playful small shift within a safe bounds (so it never leaves the card or gets lost)
-    // Angles alternating left, right, slightly up/down
     const maxOffset = Math.min(80, 20 + nextCount * 12);
     const randomX = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * maxOffset + 15);
     const randomY = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 25 + 10);
@@ -26,8 +24,6 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
     setNoPosition({ x: randomX, y: randomY });
   };
 
-  // Progressive scale for the YES button
-  // 0: 1.0, 1: 1.18, 2: 1.38, 3: 1.62, 4: 1.90, max: 2.2
   const yesScale = Math.min(2.1, 1 + noCount * 0.22);
   const currentRejectionMessage = noCount > 0 
     ? REJECTION_RESPONSES[Math.min(noCount - 1, REJECTION_RESPONSES.length - 1)]
@@ -40,19 +36,9 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-xl mx-auto px-5 py-6 flex flex-col items-center justify-center min-h-[80vh] z-10"
+      className="w-full max-w-xl mx-auto px-4 sm:px-6 py-6 flex flex-col items-center justify-center min-h-[80vh] z-10"
     >
-      <div className="w-full relative glass-card-glow rounded-3xl p-8 sm:p-12 text-center overflow-hidden">
-        {/* Ambient Top Glow Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-sky-400/20 border border-sky-400/30 text-sky-200 mb-6"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-sky-300" />
-          <span>The moment of truth</span>
-        </motion.div>
-
+      <div className="w-full relative glass-card-glow rounded-3xl p-7 sm:p-12 text-center overflow-hidden shadow-2xl border-sky-300/50">
         {/* Intro */}
         <motion.p
           initial={{ opacity: 0 }}
@@ -83,7 +69,7 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-400/30 text-rose-200 text-xs sm:text-sm font-medium"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-rose-500/20 border border-rose-300/40 text-rose-100 text-xs sm:text-sm font-medium shadow-md"
               >
                 <span>{currentRejectionMessage}</span>
               </motion.div>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Disc3 } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import VinylPlayer from './VinylPlayer';
 
 interface OpeningScreenProps {
@@ -19,30 +19,30 @@ export default function OpeningScreen({ onStart, isPlaying, onTogglePlay }: Open
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, y: -25, scale: 0.98 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col items-center justify-center min-h-[80vh] px-6 text-center z-10 max-w-xl mx-auto"
+      className="flex flex-col items-center justify-center min-h-[80vh] px-4 sm:px-6 text-center z-10 max-w-xl mx-auto"
     >
       {/* Greeting Title */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.1 }}
-        className="space-y-3 mb-4"
+        className="space-y-3 mb-3"
       >
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight">
-          Hey, I made something <br />
+          Hey Nasss, I made something <br />
           <span className="italic text-sky-300 shimmer-text">for you.</span>
         </h1>
-        <p className="text-xs sm:text-sm text-sky-200/75 max-w-md mx-auto font-light">
+        <p className="text-xs sm:text-sm text-sky-200/80 max-w-md mx-auto font-light">
           A little digital letter with our song playing in the background ♫
         </p>
       </motion.div>
 
-      {/* Prominent Center Blue Vinyl Record Player */}
+      {/* Prominent Center Blue Vinyl Record Player with user cover */}
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.25 }}
-        className="my-2"
+        className="my-1 sm:my-2"
       >
         <VinylPlayer
           isPlaying={isPlaying}
@@ -56,7 +56,7 @@ export default function OpeningScreen({ onStart, isPlaying, onTogglePlay }: Open
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-4"
+        className="mt-3 sm:mt-4"
       >
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -64,8 +64,7 @@ export default function OpeningScreen({ onStart, isPlaying, onTogglePlay }: Open
           onClick={onStart}
           className="relative group px-9 py-3.5 rounded-full font-medium text-base tracking-wide glass-button-primary cursor-pointer flex items-center gap-2.5 shadow-2xl overflow-hidden"
         >
-          {/* Button Shimmer Ray */}
-          <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+          <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
           
           <span className="relative font-semibold text-slate-950">
             Open it ♡
