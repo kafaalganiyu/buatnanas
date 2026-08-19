@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { StepType } from '@/types';
 import { CONFESSION_PARTS } from '@/data/confessionData';
 import BackgroundEffects from '@/components/BackgroundEffects';
+import SpiderCorner from '@/components/SpiderCorner';
 import MusicPlayer from '@/components/MusicPlayer';
 import OpeningScreen from '@/components/OpeningScreen';
 import ConfessionStory from '@/components/ConfessionStory';
@@ -59,7 +60,10 @@ export default function Home() {
       {/* Spider-Man White & Soft Pink Ambient Background */}
       <BackgroundEffects />
 
-      {/* Floating Accessible Music Player */}
+      {/* Spider-Man Hanging from Web Thread in Top-Left Corner */}
+      <SpiderCorner />
+
+      {/* Floating Accessible Music Player in Top-Right Corner */}
       <MusicPlayer
         isPlaying={isPlayingMusic}
         onTogglePlay={() => setIsPlayingMusic(!isPlayingMusic)}
@@ -148,7 +152,7 @@ export default function Home() {
       </div>
 
       {/* Subtle bottom love watermark */}
-      <footer className="relative z-10 pb-2 text-center text-xs text-pink-400/60 font-medium select-none">
+      <footer className="relative z-10 pb-2 text-center text-xs text-pink-500/70 font-medium select-none">
         made with 💖 for nanas
       </footer>
     </main>
