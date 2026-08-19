@@ -5,16 +5,16 @@ import { motion } from 'framer-motion';
 
 export default function SpiderCorner() {
   return (
-    <div className="fixed top-0 left-2 sm:left-6 z-50 pointer-events-none select-none">
-      {/* Swinging Transparent Spider-Man */}
+    <div className="fixed -top-1 sm:-top-2 left-2 sm:left-6 z-50 pointer-events-none select-none">
+      {/* Swinging Transparent Spider-Man (no box, no extra web) */}
       <motion.div
         animate={{
-          rotate: [-14, 14, -14],
-          x: [-4, 4, -4],
-          y: [0, 6, 0],
+          rotate: [-12, 12, -12],
+          x: [-3, 3, -3],
+          y: [0, 5, 0],
         }}
         transition={{
-          duration: 3.2,
+          duration: 3.5,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
@@ -27,13 +27,7 @@ export default function SpiderCorner() {
         <img
           src="/gambar/spiderman.png"
           alt="Spider-Man"
-          className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(236,72,153,0.3)]"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            if (!target.src.includes('spiderman.jpg')) {
-              target.src = '/gambar/spiderman.jpg';
-            }
-          }}
+          className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(236,72,153,0.35)]"
         />
       </motion.div>
     </div>
