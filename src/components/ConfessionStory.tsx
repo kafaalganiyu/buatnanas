@@ -38,7 +38,7 @@ export default function ConfessionStory({
           {currentIndex > 0 && (
             <button
               onClick={onPrev}
-              className="p-2 rounded-full glass-card hover:border-sky-300/60 text-sky-200 hover:text-white transition-all cursor-pointer shadow-md"
+              className="p-2 rounded-full glass-card hover:border-pink-300 text-pink-700 hover:text-pink-900 transition-all cursor-pointer shadow-md"
               aria-label="Previous line"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -53,10 +53,10 @@ export default function ConfessionStory({
               key={idx}
               className={`h-1.5 rounded-full transition-all duration-500 ${
                 idx === currentIndex
-                  ? 'w-5 bg-sky-300 shadow-[0_0_10px_rgba(125,211,252,0.9)]'
+                  ? 'w-5 bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.7)]'
                   : idx < currentIndex
-                  ? 'w-2 bg-sky-400/50'
-                  : 'w-1 bg-sky-950/60'
+                  ? 'w-2 bg-pink-300'
+                  : 'w-1 bg-pink-100'
               }`}
             />
           ))}
@@ -64,7 +64,7 @@ export default function ConfessionStory({
 
         {/* Counter */}
         <div className="w-10 text-right">
-          <span className="text-[11px] font-mono text-sky-300/80">
+          <span className="text-[11px] font-mono font-medium text-pink-600">
             {currentIndex + 1}/{totalParts}
           </span>
         </div>
@@ -80,13 +80,13 @@ export default function ConfessionStory({
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className={`w-full relative rounded-3xl p-6 sm:p-9 text-center transition-all duration-500 shadow-2xl ${
             isEmphasis
-              ? 'glass-card-glow border-sky-300/60 shadow-[0_0_40px_rgba(56,189,248,0.35)]'
+              ? 'glass-card-glow border-pink-400/50 shadow-[0_16px_45px_rgba(236,72,153,0.22)]'
               : 'glass-card'
           }`}
         >
           {/* Subtle Corner Heart */}
-          <div className="absolute top-4 right-4 text-sky-300/30">
-            <Heart className="w-4 h-4 fill-sky-300/20" />
+          <div className="absolute top-4 right-4 text-pink-400/40">
+            <Heart className="w-4 h-4 fill-pink-300/30" />
           </div>
 
           {/* Confession Statement */}
@@ -94,8 +94,8 @@ export default function ConfessionStory({
             <p
               className={`leading-relaxed tracking-wide ${
                 isEmphasis
-                  ? 'font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-white text-glow-blue'
-                  : 'font-serif text-xl sm:text-2xl md:text-3xl text-sky-50 font-normal'
+                  ? 'font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 text-glow-pink'
+                  : 'font-serif text-xl sm:text-2xl md:text-3xl text-slate-800 font-normal'
               }`}
             >
               “{currentPart.content}”
@@ -107,13 +107,13 @@ export default function ConfessionStory({
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="mt-4 p-5 sm:p-6 rounded-2xl bg-sky-950/70 border border-sky-300/40 shadow-inner text-center relative max-w-md mx-auto"
+                className="mt-4 p-5 sm:p-6 rounded-2xl bg-pink-50/90 border border-pink-300 shadow-inner text-center relative max-w-md mx-auto"
               >
-                <div className="flex items-center justify-center gap-1.5 text-sky-300 text-xs mb-3 font-medium">
+                <div className="flex items-center justify-center gap-1.5 text-pink-600 text-xs mb-3 font-semibold">
                   <Music2 className="w-3.5 h-3.5 animate-pulse" />
                   <span>blue by yung kai</span>
                 </div>
-                <p className="font-serif italic text-base sm:text-lg text-sky-100/95 leading-relaxed whitespace-pre-line text-glow-soft">
+                <p className="font-serif italic text-base sm:text-lg text-slate-800 leading-relaxed whitespace-pre-line font-medium">
                   {currentPart.subtext}
                 </p>
               </motion.div>
@@ -125,19 +125,19 @@ export default function ConfessionStory({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.25 }}
-                className="mt-3 text-sm sm:text-base font-sans text-sky-200 italic"
+                className="mt-3 text-sm sm:text-base font-sans text-pink-700 italic font-medium"
               >
                 {currentPart.subtext}
               </motion.p>
             )}
 
-            {/* Single Photo Polaroid (No Caption) */}
+            {/* Single Photo Polaroid (Clean, No Caption) */}
             {hasSingleImage && currentPart.image && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="mt-5 p-2.5 sm:p-3 bg-white/95 rounded-2xl shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 max-w-[280px] sm:max-w-[340px] mx-auto text-slate-800 border-2 border-sky-200/70"
+                className="mt-5 p-2.5 sm:p-3 bg-white rounded-2xl shadow-xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 max-w-[280px] sm:max-w-[340px] mx-auto border-2 border-pink-200"
               >
                 <div className="w-full max-h-60 sm:max-h-72 rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -150,7 +150,7 @@ export default function ConfessionStory({
               </motion.div>
             )}
 
-            {/* Multiple Photos Grid / Side-by-Side (Part 8: twit1 & twit2, No Caption) */}
+            {/* Multiple Photos Grid (Part 8: twit1 & twit2, Clean, No Caption) */}
             {hasMultipleImages && currentPart.images && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
@@ -161,7 +161,7 @@ export default function ConfessionStory({
                 {currentPart.images.map((imgSrc, idx) => (
                   <div
                     key={idx}
-                    className={`p-2.5 bg-white/95 rounded-2xl shadow-2xl transition-transform duration-300 border-2 border-sky-200/70 ${
+                    className={`p-2 bg-white rounded-2xl shadow-xl transition-transform duration-300 border-2 border-pink-200 ${
                       idx === 0 ? 'sm:-rotate-1 hover:rotate-0' : 'sm:rotate-1 hover:rotate-0'
                     }`}
                   >

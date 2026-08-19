@@ -17,10 +17,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "For You 💙 | A Special Letter",
-  description: "Hey, I made something for you...",
+  title: "For Nasss 💖 | Special Letter",
+  description: "Hey Nasss, I made something for you...",
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>",
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>",
   },
 };
 
@@ -29,7 +29,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#060d1f",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
-      <body className="antialiased font-sans bg-midnight-950 text-ice-100 min-h-screen relative overflow-x-hidden selection:bg-ice-400 selection:text-midnight-950">
+      <body className="antialiased font-sans bg-white text-slate-900 min-h-screen relative overflow-x-hidden selection:bg-pink-400 selection:text-white">
         {children}
       </body>
     </html>

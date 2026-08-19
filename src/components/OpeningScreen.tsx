@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
+import { Heart, Sparkles } from 'lucide-react';
 import VinylPlayer from './VinylPlayer';
 
 interface OpeningScreenProps {
@@ -28,18 +28,18 @@ export default function OpeningScreen({ onStart, isPlaying, onTogglePlay }: Open
         transition={{ duration: 0.9, delay: 0.1 }}
         className="space-y-3 mb-3"
       >
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight">
+        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
           Hey Nasss, I made something <br />
-          <span className="italic text-sky-300 shimmer-text">for you.</span>
+          <span className="italic text-pink-600 shimmer-text">for you.</span>
         </h1>
         
         {/* Indonesian begadang note */}
-        <p className="text-xs sm:text-sm text-sky-200/90 max-w-md mx-auto font-normal bg-sky-500/15 py-1.5 px-4 rounded-full border border-sky-400/25 inline-block shadow-sm">
-          maaf yaa semalem begadang, akuu bikin ini :))) 💙
+        <p className="text-xs sm:text-sm text-pink-700 max-w-md mx-auto font-medium bg-pink-100/90 py-1.5 px-4 rounded-full border border-pink-300 shadow-sm inline-block">
+          maaf yaa semalem begadang, akuu bikin ini :))) 💖
         </p>
       </motion.div>
 
-      {/* Prominent Center Blue Vinyl Record Player with user cover */}
+      {/* Prominent Center Vinyl Record Player */}
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -68,10 +68,10 @@ export default function OpeningScreen({ onStart, isPlaying, onTogglePlay }: Open
         >
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
           
-          <span className="relative font-semibold text-slate-950">
+          <span className="relative font-bold text-white">
             Open it ♡
           </span>
-          <Heart className="w-4 h-4 text-slate-950 fill-slate-950" />
+          <Heart className="w-4 h-4 text-white fill-white" />
         </motion.button>
       </motion.div>
     </motion.div>

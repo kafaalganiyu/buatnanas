@@ -56,10 +56,10 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden">
-      {/* Dynamic Romantic Background with Floating Hearts & Twinkles */}
+      {/* Spider-Man White & Soft Pink Ambient Background */}
       <BackgroundEffects />
 
-      {/* Floating Accessible Music Player (Audio Engine & Corner Toggle) */}
+      {/* Floating Accessible Music Player */}
       <MusicPlayer
         isPlaying={isPlayingMusic}
         onTogglePlay={() => setIsPlayingMusic(!isPlayingMusic)}
@@ -148,8 +148,8 @@ export default function Home() {
       </div>
 
       {/* Subtle bottom love watermark */}
-      <footer className="relative z-10 pb-2 text-center text-xs text-sky-400/40 font-light select-none">
-        made with 💙 for someone special
+      <footer className="relative z-10 pb-2 text-center text-xs text-pink-400/60 font-medium select-none">
+        made with 💖 for nanas
       </footer>
     </main>
   );

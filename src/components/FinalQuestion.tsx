@@ -38,13 +38,13 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-xl mx-auto px-4 sm:px-6 py-6 flex flex-col items-center justify-center min-h-[80vh] z-10"
     >
-      <div className="w-full relative glass-card-glow rounded-3xl p-7 sm:p-12 text-center overflow-hidden shadow-2xl border-sky-300/50">
+      <div className="w-full relative glass-card-glow rounded-3xl p-7 sm:p-12 text-center overflow-hidden shadow-2xl border-pink-300/50">
         {/* Intro */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-base sm:text-lg text-sky-200/90 font-light mb-3 italic"
+          className="text-base sm:text-lg text-pink-700 font-medium mb-3 italic"
         >
           “{FINAL_QUESTION_DATA.intro}”
         </motion.p>
@@ -54,7 +54,7 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35 }}
-          className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-white text-glow-blue leading-snug my-6"
+          className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 text-glow-pink leading-snug my-6"
         >
           {FINAL_QUESTION_DATA.question}
         </motion.h2>
@@ -69,7 +69,7 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-rose-500/20 border border-rose-300/40 text-rose-100 text-xs sm:text-sm font-medium shadow-md"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-rose-100 border border-rose-300 text-rose-700 text-xs sm:text-sm font-semibold shadow-sm"
               >
                 <span>{currentRejectionMessage}</span>
               </motion.div>
@@ -95,10 +95,10 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
             }}
             whileHover={{ scale: yesScale * 1.05 }}
             whileTap={{ scale: yesScale * 0.96 }}
-            className="px-8 py-3.5 rounded-full font-semibold text-base sm:text-lg glass-button-primary cursor-pointer flex items-center gap-2 shadow-2xl z-20"
+            className="px-8 py-3.5 rounded-full font-bold text-base sm:text-lg glass-button-primary cursor-pointer flex items-center gap-2 shadow-2xl z-20"
           >
             <span>{FINAL_QUESTION_DATA.yesButton}</span>
-            <Heart className="w-4 h-4 fill-slate-950 text-slate-950" />
+            <Heart className="w-4 h-4 fill-white text-white" />
           </motion.button>
 
           {/* NO BUTTON (Playfully drifts & dodges) */}
@@ -115,7 +115,7 @@ export default function FinalQuestion({ onAccept }: FinalQuestionProps) {
             }}
             whileHover={{ scale: 0.95 }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-2.5 rounded-full text-sm font-medium glass-button-secondary cursor-pointer transition-colors z-10"
+            className="px-6 py-2.5 rounded-full text-sm font-medium glass-button-secondary cursor-pointer transition-colors z-10 shadow-sm"
           >
             <span>{FINAL_QUESTION_DATA.noButton}</span>
           </motion.button>

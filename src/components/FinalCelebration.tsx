@@ -14,7 +14,6 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
   const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
-    // Format today's date romantically
     const now = new Date();
     setCurrentDate(
       now.toLocaleDateString('en-US', {
@@ -24,12 +23,12 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
       })
     );
 
-    // Romantic Blue & Sky Confetti Cannons
-    const colors = ['#38bdf8', '#0ea5e9', '#bae6fd', '#ffffff', '#60a5fa', '#93c5fd'];
+    // Spider-Man Romantic Pink, White, Rose, Silver Confetti Cannons
+    const colors = ['#f472b6', '#ec4899', '#db2777', '#ffffff', '#fda4af', '#fbcfe8'];
 
     const triggerConfetti = () => {
       confetti({
-        particleCount: 80,
+        particleCount: 85,
         spread: 100,
         origin: { y: 0.6 },
         colors,
@@ -64,10 +63,10 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col items-center justify-center min-h-[85vh] z-10 text-center"
     >
-      <div className="w-full relative glass-card-glow rounded-3xl p-6 sm:p-10 overflow-hidden shadow-2xl border-sky-300/50">
+      <div className="w-full relative glass-card-glow rounded-3xl p-6 sm:p-10 overflow-hidden shadow-2xl border-pink-300/50">
         {/* Glow backdrop aura */}
-        <div className="absolute -top-24 -left-24 w-64 h-64 bg-sky-400/30 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/25 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-pink-300/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-rose-300/25 rounded-full blur-3xl pointer-events-none" />
 
         {/* Celebrating Heart Icon */}
         <motion.div
@@ -76,9 +75,9 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
             rotate: [0, 6, -6, 0],
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-5 rounded-full bg-gradient-to-tr from-sky-400/30 to-blue-500/40 border border-sky-200/60 flex items-center justify-center text-sky-200 shadow-[0_0_35px_rgba(56,189,248,0.5)]"
+          className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-5 rounded-full bg-gradient-to-tr from-pink-400/25 to-rose-500/30 border border-pink-300/60 flex items-center justify-center text-pink-500 shadow-[0_0_35px_rgba(244,114,182,0.5)]"
         >
-          <Heart className="w-8 h-8 sm:w-10 sm:h-10 fill-sky-300 text-sky-200" />
+          <Heart className="w-8 h-8 sm:w-10 sm:h-10 fill-pink-500 text-pink-500" />
         </motion.div>
 
         {/* Big Official Title */}
@@ -86,7 +85,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white text-glow-blue leading-tight mb-2"
+          className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 text-glow-pink leading-tight mb-2"
         >
           {CELEBRATION_DATA.title}
         </motion.h1>
@@ -96,7 +95,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35 }}
-          className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-sky-200 mb-6 italic shimmer-text"
+          className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-pink-600 mb-6 italic shimmer-text"
         >
           “{CELEBRATION_DATA.subtitle}”
         </motion.h2>
@@ -106,18 +105,18 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="p-5 sm:p-7 rounded-2xl bg-midnight-900/80 border border-sky-300/30 text-left my-5 relative shadow-inner"
+          className="p-5 sm:p-7 rounded-2xl bg-white/95 border border-pink-200 text-left my-5 relative shadow-md"
         >
-          <p className="text-sm sm:text-base text-sky-100/95 font-light leading-relaxed mb-4">
+          <p className="text-sm sm:text-base text-slate-800 font-normal leading-relaxed mb-4">
             {CELEBRATION_DATA.loveNote}
           </p>
 
-          <div className="flex items-center justify-between pt-3 border-t border-sky-300/25 text-xs text-sky-300/90">
-            <span className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-sky-400" />
+          <div className="flex items-center justify-between pt-3 border-t border-pink-200 text-xs text-pink-700">
+            <span className="flex items-center gap-1.5 font-medium">
+              <Calendar className="w-3.5 h-3.5 text-pink-500" />
               {currentDate || 'Forever & Always'}
             </span>
-            <span className="font-serif text-sky-200 italic font-semibold text-sm">
+            <span className="font-serif text-pink-600 italic font-bold text-sm">
               {CELEBRATION_DATA.signature}
             </span>
           </div>
@@ -128,10 +127,10 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-2 text-xs text-sky-200 mb-6"
+          className="flex items-center justify-center gap-2 text-xs text-pink-700 mb-6 font-medium"
         >
-          <Disc3 className="w-4 h-4 text-sky-400 animate-spin" />
-          <span>Playing <strong className="text-white font-medium">blue by yung kai</strong> ♫</span>
+          <Disc3 className="w-4 h-4 text-pink-500 animate-spin" />
+          <span>Playing <strong className="text-slate-900 font-semibold">blue by yung kai</strong> ♫</span>
         </motion.div>
 
         {/* Restart / Replay button */}
@@ -143,7 +142,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
         >
           <button
             onClick={onRestart}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium glass-button-secondary hover:border-sky-300/60 cursor-pointer shadow-md"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold glass-button-secondary hover:border-pink-400 cursor-pointer shadow-sm"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Read from the beginning</span>

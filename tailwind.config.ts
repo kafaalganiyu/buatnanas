@@ -11,20 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        midnight: {
-          950: "#050b18",
-          900: "#091428",
-          800: "#0d2040",
-          700: "#13315c",
+        spider: {
+          pink: "#f472b6",
+          rose: "#ec4899",
+          magenta: "#db2777",
+          dark: "#0f172a",
+          light: "#fff1f2",
         },
-        ice: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-        }
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
@@ -36,23 +29,28 @@ const config: Config = {
         "pulse-glow": "pulseGlow 3s ease-in-out infinite",
         "twinkle": "twinkle 4s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
+        "swing": "swing 3.5s ease-in-out infinite",
       },
       keyframes: {
         floatSlow: {
           "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(-18px) rotate(3deg)" },
+          "50%": { transform: "translateY(-14px) rotate(2deg)" },
         },
         floatMedium: {
           "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(-12px) rotate(-3deg)" },
+          "50%": { transform: "translateY(-8px) rotate(-2deg)" },
         },
         pulseGlow: {
-          "0%, 100%": { opacity: "0.4", filter: "blur(20px)" },
-          "50%": { opacity: "0.75", filter: "blur(28px)" },
+          "0%, 100%": { opacity: "0.35", filter: "blur(24px)" },
+          "50%": { opacity: "0.65", filter: "blur(32px)" },
         },
         twinkle: {
-          "0%, 100%": { opacity: "0.2", transform: "scale(0.8)" },
-          "50%": { opacity: "1", transform: "scale(1.2)" },
+          "0%, 100%": { opacity: "0.3", transform: "scale(0.85)" },
+          "50%": { opacity: "1", transform: "scale(1.15)" },
+        },
+        swing: {
+          "0%, 100%": { transform: "rotate(4deg)" },
+          "50%": { transform: "rotate(-4deg)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },

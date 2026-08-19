@@ -96,7 +96,7 @@ export const REJECTION_RESPONSES = [
   "Hmm… think again 👀",
   "Really? You’re breaking my heart here 😭",
   "Wait... are you testing me, Nanasss? 🙈",
-  "The Yes button is getting impossible to miss! 💙",
+  "The Yes button is getting impossible to miss! 💖",
   "You know you want to press Yes... ✨",
   "My heart says you meant Yes! 💫",
 ];
@@ -104,26 +104,26 @@ export const REJECTION_RESPONSES = [
 export const CONFIRMATION_STEPS: ConfirmationStep[] = [
   {
     step: 1,
-    question: "Are you sure, Nasss? 🥺",
+    question: "Are you sure, Nasss?",
     yesText: "Yes",
     noText: "No",
   },
   {
     step: 2,
-    question: "Like… really sure? 👀",
+    question: "Like… really sure?",
     yesText: "Yes",
     noText: "No",
   },
   {
     step: 3,
-    question: "Okay, but are you REALLY, REALLY sure? 💙",
+    question: "Okay, but are you REALLY, REALLY sure?",
     yesText: "YES, I’M SURE",
     noText: "No",
   },
 ];
 
 export const CELEBRATION_DATA = {
-  title: "Then it’s official. 💙",
+  title: "Then it’s official. 💖",
   subtitle: "I’m your boyfriend now.",
   loveNote: "From high school memories, secret playlists, all the times I talked about you to my friends, and every moment I spent thinking about you, thank you for letting me back into your life, Nanasss. I promise to cherish and protect this love forever.",
   signature: "With all my love ♡",

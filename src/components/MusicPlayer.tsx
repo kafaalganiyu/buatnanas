@@ -121,7 +121,7 @@ export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProp
         <source src="/audio/yung kai - blue (Lyrics).mp3" type="audio/mpeg" />
       </audio>
 
-      {/* Floating Music Player Pill */}
+      {/* Floating Music Player Pill (White & Pink Spider-Man theme) */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -131,47 +131,47 @@ export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProp
         <button
           onClick={onTogglePlay}
           aria-label={isPlaying ? "Pause music" : "Play music"}
-          className="group flex items-center gap-2.5 px-3.5 py-2 rounded-full glass-card hover:border-sky-300/50 transition-all duration-300 shadow-lg shadow-sky-950/40 cursor-pointer"
+          className="group flex items-center gap-2.5 px-3.5 py-2 rounded-full glass-card hover:border-pink-400 transition-all duration-300 shadow-lg shadow-pink-200/50 cursor-pointer bg-white/90"
         >
           {/* Vinyl / Music Icon */}
           <div className="relative flex items-center justify-center">
             <motion.div
               animate={{ rotate: isPlaying ? 360 : 0 }}
               transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-              className="text-sky-300"
+              className="text-pink-500"
             >
               <Disc className="w-5 h-5" />
             </motion.div>
             {isPlaying && (
-              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-pink-500 animate-ping" />
             )}
           </div>
 
           {/* Song Info & Equalizer */}
           <div className="flex flex-col items-start text-left">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-medium text-sky-100 tracking-wide">
+            <div className="flex items-center gap-1">
+              <span className="text-xs font-semibold text-slate-800 tracking-wide">
                 blue
               </span>
-              <span className="text-[10px] text-sky-300/80">
+              <span className="text-[10px] text-pink-600 font-medium">
                 yung kai
               </span>
             </div>
 
             {/* Visualizer bars */}
             <div className="flex items-center gap-0.5 h-3 mt-0.5">
-              <div className={`w-0.5 rounded-full bg-sky-400 ${isPlaying ? 'eq-bar-1' : 'h-1 opacity-40'}`} />
-              <div className={`w-0.5 rounded-full bg-sky-300 ${isPlaying ? 'eq-bar-2' : 'h-1.5 opacity-40'}`} />
-              <div className={`w-0.5 rounded-full bg-sky-400 ${isPlaying ? 'eq-bar-3' : 'h-1 opacity-40'}`} />
+              <div className={`w-0.5 rounded-full bg-pink-500 ${isPlaying ? 'eq-bar-1' : 'h-1 opacity-40'}`} />
+              <div className={`w-0.5 rounded-full bg-pink-400 ${isPlaying ? 'eq-bar-2' : 'h-1.5 opacity-40'}`} />
+              <div className={`w-0.5 rounded-full bg-pink-500 ${isPlaying ? 'eq-bar-3' : 'h-1 opacity-40'}`} />
             </div>
           </div>
 
           {/* Play / Pause Toggle Icon */}
-          <div className="ml-1 text-sky-300/80 group-hover:text-white transition-colors">
+          <div className="ml-1 text-pink-600 group-hover:text-pink-800 transition-colors">
             {isPlaying ? (
               <Volume2 className="w-4 h-4" />
             ) : (
-              <VolumeX className="w-4 h-4 text-sky-400/50" />
+              <VolumeX className="w-4 h-4 text-pink-300" />
             )}
           </div>
         </button>
