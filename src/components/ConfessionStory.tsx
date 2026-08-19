@@ -111,7 +111,7 @@ export default function ConfessionStory({
               >
                 <div className="flex items-center justify-center gap-1.5 text-sky-300 text-xs mb-3 font-medium">
                   <Music2 className="w-3.5 h-3.5 animate-pulse" />
-                  <span>blue — yung kai</span>
+                  <span>blue by yung kai</span>
                 </div>
                 <p className="font-serif italic text-base sm:text-lg text-sky-100/95 leading-relaxed whitespace-pre-line text-glow-soft">
                   {currentPart.subtext}

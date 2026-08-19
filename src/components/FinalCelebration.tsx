@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { CELEBRATION_DATA } from '@/data/confessionData';
-import { Heart, Sparkles, Calendar, Disc3, RotateCcw } from 'lucide-react';
+import { Heart, Calendar, Disc3, RotateCcw } from 'lucide-react';
 
 interface FinalCelebrationProps {
   onRestart: () => void;
@@ -91,7 +91,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           {CELEBRATION_DATA.title}
         </motion.h1>
 
-        {/* Subtitle ("I'm your boyfriend now, Nasss.") */}
+        {/* Subtitle ("I'm your boyfriend now.") */}
         <motion.h2
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           className="flex items-center justify-center gap-2 text-xs text-sky-200 mb-6"
         >
           <Disc3 className="w-4 h-4 text-sky-400 animate-spin" />
-          <span>Playing <strong className="text-white font-medium">blue — yung kai</strong> ♫</span>
+          <span>Playing <strong className="text-white font-medium">blue by yung kai</strong> ♫</span>
         </motion.div>
 
         {/* Restart / Replay button */}

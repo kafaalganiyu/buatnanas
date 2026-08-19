@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Volume2, VolumeX, Music, Disc } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Volume2, VolumeX, Disc } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface MusicPlayerProps {
   isPlaying: boolean;
@@ -11,8 +11,8 @@ interface MusicPlayerProps {
 
 export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const [isAudioLoaded, setIsAudioLoaded] = useState(false);
+  const [, setHasInteracted] = useState(false);
+  const [, setIsAudioLoaded] = useState(false);
 
   // Web Audio Synth Fallback (in case external mp3 fails to load or offline)
   const synthCtxRef = useRef<AudioContext | null>(null);
@@ -88,7 +88,6 @@ export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProp
       const playPromise = audio.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // If browser policy blocks mp3 or audio file missing, activate soft fallback synth
           startFallbackSynth();
         });
       }
@@ -99,7 +98,6 @@ export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProp
   }, [isPlaying, startFallbackSynth, stopFallbackSynth]);
 
   const handleAudioError = () => {
-    // If mp3 fails to load, gracefully switch to romantic synth
     if (isPlaying) {
       startFallbackSynth();
     }
@@ -133,7 +131,7 @@ export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProp
         <button
           onClick={onTogglePlay}
           aria-label={isPlaying ? "Pause music" : "Play music"}
-          className="group flex items-center gap-2.5 px-3.5 py-2 rounded-full glass-card hover:border-sky-400/40 transition-all duration-300 shadow-lg shadow-sky-950/40 cursor-pointer"
+          className="group flex items-center gap-2.5 px-3.5 py-2 rounded-full glass-card hover:border-sky-300/50 transition-all duration-300 shadow-lg shadow-sky-950/40 cursor-pointer"
         >
           {/* Vinyl / Music Icon */}
           <div className="relative flex items-center justify-center">
@@ -156,7 +154,7 @@ export default function MusicPlayer({ isPlaying, onTogglePlay }: MusicPlayerProp
                 blue
               </span>
               <span className="text-[10px] text-sky-300/80">
-                — yung kai
+                yung kai
               </span>
             </div>
 

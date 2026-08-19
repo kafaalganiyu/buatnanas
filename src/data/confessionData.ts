@@ -51,7 +51,7 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
     id: 9,
     content: "I think I fell way too deep.",
     emphasis: true,
-    subtext: "— and every path kept leading straight back to you.",
+    subtext: "and every path kept leading straight back to you.",
     image: "/gambar/f7d10e36-d523-4e46-a3c5-50ccbcc8bd76.jpg",
     buttonText: "Keep reading ♡",
   },
@@ -125,6 +125,6 @@ export const CONFIRMATION_STEPS: ConfirmationStep[] = [
 export const CELEBRATION_DATA = {
   title: "Then it’s official. 💙",
   subtitle: "I’m your boyfriend now.",
-  loveNote: "From high school memories, secret playlists, all the times I talked about you to my friends, and every moment I spent thinking about you — thank you for letting me back into your life, Nanasss. I promise to cherish and protect this love forever.",
+  loveNote: "From high school memories, secret playlists, all the times I talked about you to my friends, and every moment I spent thinking about you, thank you for letting me back into your life, Nanasss. I promise to cherish and protect this love forever.",
   signature: "With all my love ♡",
 };

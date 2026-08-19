@@ -30,7 +30,7 @@ export default function VinylPlayer({ isPlaying, onTogglePlay, variant = 'promin
               transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
               className="w-8 h-8 rounded-full bg-gradient-to-tr from-sky-950 via-slate-900 to-sky-900 border border-sky-400/50 flex items-center justify-center shadow-md relative overflow-hidden"
             >
-              {/* Center user image or dot */}
+              {/* Center user image */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/gambar/blue.png"
@@ -49,7 +49,7 @@ export default function VinylPlayer({ isPlaying, onTogglePlay, variant = 'promin
           {/* Track details */}
           <div className="flex flex-col text-left">
             <span className="text-xs font-semibold text-sky-100 flex items-center gap-1">
-              blue <span className="text-[10px] text-sky-200/80 font-normal">— yung kai</span>
+              blue <span className="text-[10px] text-sky-200/80 font-normal">by yung kai</span>
             </span>
             <span className="text-[10px] text-sky-300 font-medium">
               {isPlaying ? 'Now Playing ♫' : 'Paused ⏸'}
@@ -131,7 +131,7 @@ export default function VinylPlayer({ isPlaying, onTogglePlay, variant = 'promin
       {/* Track info tag */}
       <div className="mt-4 flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-card border-sky-300/40 text-xs text-sky-100 shadow-lg">
         <Disc3 className={`w-3.5 h-3.5 text-sky-300 ${isPlaying ? 'animate-spin' : ''}`} />
-        <span>yung kai — <strong>blue</strong></span>
+        <span>yung kai • <strong>blue</strong></span>
         <button
           onClick={onTogglePlay}
           className="ml-1 px-3 py-0.5 rounded-full bg-sky-400/25 hover:bg-sky-400 hover:text-slate-950 text-sky-100 hover:font-semibold transition-all text-[11px] cursor-pointer"
