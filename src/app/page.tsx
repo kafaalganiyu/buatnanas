@@ -59,7 +59,7 @@ export default function Home() {
       {/* Dynamic Romantic Background with Floating Hearts & Twinkles */}
       <BackgroundEffects />
 
-      {/* Floating Minimalist Music Player */}
+      {/* Floating Accessible Music Player (Audio Engine & Corner Toggle) */}
       <MusicPlayer
         isPlaying={isPlayingMusic}
         onTogglePlay={() => setIsPlayingMusic(!isPlayingMusic)}
@@ -77,7 +77,11 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="w-full"
             >
-              <OpeningScreen onStart={handleStart} />
+              <OpeningScreen
+                onStart={handleStart}
+                isPlaying={isPlayingMusic}
+                onTogglePlay={() => setIsPlayingMusic(!isPlayingMusic)}
+              />
             </motion.div>
           )}
 

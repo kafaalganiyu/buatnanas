@@ -13,48 +13,58 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
   },
   {
     id: 3,
-    content: "But when we lost contact, I slowly realized how much it actually meant to me.",
+    content: "And I’m truly sorry for how I was back then... for not giving you the certainty and clarity you deserved.",
     buttonText: "Continue ♡",
   },
   {
     id: 4,
-    content: "You probably don’t know this, but during those two years when we weren’t in contact, I still checked your playlists.",
-    buttonText: "Read more ♡",
-  },
-  {
-    id: 5,
-    content: "I still made playlists for you, even when you didn’t know about them.",
+    content: "When we lost contact, I slowly realized how much you actually meant to me.",
     buttonText: "Next ♡",
   },
   {
+    id: 5,
+    content: "You probably didn’t know this, but during those two years when we weren’t in contact, I talked about you to my friends so often.",
+    buttonText: "Read more ♡",
+  },
+  {
     id: 6,
-    content: "I was genuinely happy whenever you updated something on your second account, and I tweeted so much about you without you even knowing.",
+    content: "I was truly thinking about you all this time, wondering how your days were going.",
     buttonText: "Continue ♡",
   },
   {
     id: 7,
-    content: "I think I fell way too deep.",
-    emphasis: true,
-    subtext: "— and there was no turning back.",
-    buttonText: "Keep reading ♡",
+    content: "I still checked your playlists, and I still made secret playlists just for you.",
+    buttonText: "Next ♡",
   },
   {
     id: 8,
-    content: "And somewhere along the way, I realized that you mean so much more to me than I ever expected.",
+    content: "I was genuinely happy whenever you updated something on your second account, and I tweeted so much about you without you even knowing.",
     buttonText: "Continue ♡",
   },
   {
     id: 9,
-    content: "I really don’t want to lose you for the second time.",
-    buttonText: "Next ♡",
+    content: "I think I fell way too deep.",
+    emphasis: true,
+    subtext: "— and every thought kept leading back to you.",
+    buttonText: "Keep reading ♡",
   },
   {
     id: 10,
-    content: "I feel like I’d regret it so much if I never told you how I feel.",
+    content: "And somewhere along the way, I realized that you mean so much more to me than I ever expected.",
     buttonText: "Continue ♡",
   },
   {
     id: 11,
+    content: "I really don’t want to lose you for the second time.",
+    buttonText: "Next ♡",
+  },
+  {
+    id: 12,
+    content: "I feel like I’d regret it so much if I never told you how I truly feel.",
+    buttonText: "Continue ♡",
+  },
+  {
+    id: 13,
     content: "Even if we had stayed out of contact back then, I think I would’ve still confessed to you someday.",
     buttonText: "There's one more thing... ♡",
   },
@@ -62,7 +72,7 @@ export const CONFESSION_PARTS: ConfessionPart[] = [
 
 export const FINAL_QUESTION_DATA = {
   intro: "This time, I just want to be honest with you.",
-  question: "Would it be okay if I became your boyfriend?",
+  question: "Would it be okay if I became your girlfriend?",
   yesButton: "Yes ♡",
   noButton: "No",
 };
@@ -100,7 +110,7 @@ export const CONFIRMATION_STEPS: ConfirmationStep[] = [
 
 export const CELEBRATION_DATA = {
   title: "Then it’s official. 💙",
-  subtitle: "You’re my boyfriend now.",
-  loveNote: "From high school memories to quiet playlists and every unspoken thought in between — thank you for being you. Here's to our chapter together.",
+  subtitle: "I’m your girlfriend now.",
+  loveNote: "From high school memories, quiet playlists, and all the times I talked about you to my friends — thank you for being you. I promise not to let you go this time.",
   signature: "With all my love ♡",
 };

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { CELEBRATION_DATA } from '@/data/confessionData';
-import { Heart, Sparkles, Music2, RotateCcw, Calendar } from 'lucide-react';
+import { Heart, Sparkles, Music2, RotateCcw, Calendar, Disc3 } from 'lucide-react';
 
 interface FinalCelebrationProps {
   onRestart: () => void;
@@ -24,22 +24,21 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
       })
     );
 
-    // Romantic Blue Confetti Cannons
-    const colors = ['#38bdf8', '#0ea5e9', '#bae6fd', '#ffffff', '#60a5fa'];
+    // Romantic Blue & Sky Confetti Cannons
+    const colors = ['#38bdf8', '#0ea5e9', '#bae6fd', '#ffffff', '#60a5fa', '#93c5fd'];
 
     const triggerConfetti = () => {
       confetti({
-        particleCount: 70,
-        spread: 80,
+        particleCount: 75,
+        spread: 90,
         origin: { y: 0.6 },
         colors,
       });
     };
 
-    // Initial burst
     triggerConfetti();
 
-    // Side cannons
+    // Cascading confetti bursts
     const end = Date.now() + 3.5 * 1000;
     const interval: NodeJS.Timeout = setInterval(() => {
       if (Date.now() > end) {
@@ -63,9 +62,9 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
       initial={{ opacity: 0, scale: 0.92 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-xl mx-auto px-5 py-8 flex flex-col items-center justify-center min-h-[85vh] z-10 text-center"
+      className="w-full max-w-xl mx-auto px-4 sm:px-6 py-8 flex flex-col items-center justify-center min-h-[85vh] z-10 text-center"
     >
-      <div className="w-full relative glass-card-glow rounded-3xl p-8 sm:p-12 overflow-hidden shadow-2xl border-sky-400/40">
+      <div className="w-full relative glass-card-glow rounded-3xl p-7 sm:p-11 overflow-hidden shadow-2xl border-sky-400/40">
         {/* Glow backdrop aura */}
         <div className="absolute -top-24 -left-24 w-60 h-60 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-60 h-60 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
@@ -73,8 +72,8 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
         {/* Celebrating Header Icon */}
         <motion.div
           animate={{
-            scale: [1, 1.15, 1],
-            rotate: [0, 6, -6, 0],
+            scale: [1, 1.12, 1],
+            rotate: [0, 5, -5, 0],
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-tr from-sky-500/20 to-blue-500/30 border border-sky-300/40 flex items-center justify-center text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.4)]"
@@ -82,35 +81,24 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           <Heart className="w-10 h-10 fill-sky-400 text-sky-300" />
         </motion.div>
 
-        {/* Official Confession Accepted Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-sky-400/20 border border-sky-400/40 text-sky-200 mb-4"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-sky-300" />
-          <span>Our New Beginning</span>
-        </motion.div>
-
         {/* Big Official Title */}
         <motion.h1
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.2 }}
           className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white text-glow-blue leading-tight mb-2"
         >
           {CELEBRATION_DATA.title}
         </motion.h1>
 
-        {/* Subtitle ("You're my boyfriend now.") */}
+        {/* Subtitle ("I'm your girlfriend now.") */}
         <motion.h2
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="font-serif text-xl sm:text-2xl md:text-3xl font-medium text-sky-200 mb-6 italic"
+          transition={{ delay: 0.35 }}
+          className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-sky-200 mb-6 italic shimmer-text"
         >
-          {CELEBRATION_DATA.subtitle}
+          “{CELEBRATION_DATA.subtitle}”
         </motion.h2>
 
         {/* Romantic Letter Card */}
@@ -118,35 +106,35 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="p-6 sm:p-7 rounded-2xl bg-midnight-900/60 border border-sky-400/20 text-left my-6 relative shadow-inner"
+          className="p-6 sm:p-7 rounded-2xl bg-midnight-900/70 border border-sky-400/25 text-left my-6 relative shadow-inner"
         >
           <p className="text-sm sm:text-base text-sky-100/90 font-light leading-relaxed mb-4">
             {CELEBRATION_DATA.loveNote}
           </p>
 
-          <div className="flex items-center justify-between pt-3 border-t border-sky-400/15 text-xs text-sky-300/70">
+          <div className="flex items-center justify-between pt-3 border-t border-sky-400/20 text-xs text-sky-300/80">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-sky-400" />
               {currentDate || 'Forever & Always'}
             </span>
-            <span className="font-serif text-sky-200 italic font-medium">
+            <span className="font-serif text-sky-200 italic font-medium text-sm">
               {CELEBRATION_DATA.signature}
             </span>
           </div>
         </motion.div>
 
-        {/* Now Playing Audio Card Accent */}
+        {/* Music indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-2 text-xs text-sky-300/80 mb-8"
+          className="flex items-center justify-center gap-2 text-xs text-sky-300/90 mb-8"
         >
-          <Music2 className="w-4 h-4 text-sky-400 animate-bounce" />
-          <span>Listening to <strong className="text-white font-medium">blue — yung kai</strong> together</span>
+          <Disc3 className="w-4 h-4 text-sky-400 animate-spin" />
+          <span>Playing <strong className="text-white font-medium">blue — yung kai</strong> ♫</span>
         </motion.div>
 
-        {/* Restart / Replay journey button */}
+        {/* Restart / Replay button */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -155,7 +143,7 @@ export default function FinalCelebration({ onRestart }: FinalCelebrationProps) {
         >
           <button
             onClick={onRestart}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium glass-button-secondary hover:border-sky-400/40 cursor-pointer"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium glass-button-secondary hover:border-sky-400/40 cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Read from the beginning</span>
